@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PointerView">
+        <!--指示图标。一个有"android:state_selected"属性的StateListDrawable-->
+        <attr name="pointerDrawable" format="reference" />
+        <!--图标的间距-->
+        <attr name="spacing" format="dimension">
+            <!--在图标之外将其向内挤压-->
+            <enum name="fill_center" value="-1" />
+            <!--在图标之间将其向外撑开-->
+            <enum name="fill_spacing" value="-2" />
+        </attr>
+        <!--指示图标数量-->
+        <attr name="pointerCount" format="integer" />
+        <!--当前选择的图标位置-->
+        <attr name="currentPosition" format="integer" />
+    </declare-styleable>
+</resources>
