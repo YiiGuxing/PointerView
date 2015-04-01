@@ -11,7 +11,8 @@ ViewPagerIndicator
         <selector xmlns:android="http://schemas.android.com/apk/res/android">
             <item android:state_selected="true" android:drawable="@drawable/pointer_selected"/>
             <item android:drawable="@drawable/pointer"/>
-            </selector>
+        </selector>
+        
 2.layout:
 
         <cn.tinkling.widget.PointerView xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -20,6 +21,7 @@ ViewPagerIndicator
             android:layout_height="wrap_content"
             app:pointerDrawable="@drawable/pointer"
             app:spacing="fill_center" />
+            
 3.
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
