@@ -13,7 +13,7 @@ ViewPagerIndicator
             <item android:drawable="@drawable/pointer"/>
         </selector>
         
-2.layout:
+2.layout xml:
 
         <cn.tinkling.widget.PointerView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/pointerView"
@@ -22,7 +22,7 @@ ViewPagerIndicator
             app:pointerDrawable="@drawable/pointer"
             app:spacing="fill_center" />
             
-3.
+3.code:
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
         ...
