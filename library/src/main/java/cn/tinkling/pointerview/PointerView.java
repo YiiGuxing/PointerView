@@ -1,4 +1,4 @@
-package cn.tinkling.widget;
+package cn.tinkling.pointerview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -100,7 +100,6 @@ public class PointerView extends View {
         w += paddingLeft + paddingRight;
         h += paddingTop + paddingBottom;
 
-
         w = Math.max(w, getSuggestedMinimumWidth());
         h = Math.max(h, getSuggestedMinimumHeight());
 
@@ -117,7 +116,9 @@ public class PointerView extends View {
     }
 
     /**
-     * @param spacing
+     * 设置图标的间距
+     *
+     * @param spacing 间距，单位为像素
      * @see #FILL_CENTER
      * @see #FILL_SPACING
      */
@@ -132,10 +133,18 @@ public class PointerView extends View {
         }
     }
 
+    /**
+     * @return 当前图标的间距
+     */
     public int getSpacing() {
         return mSpacing;
     }
 
+    /**
+     * 设置图标的数量
+     *
+     * @param count 图标的数量
+     */
     public void setPointerCount(int count) {
         if (count < 0) {
             throw new IllegalArgumentException("The count must be greater than 0.");
@@ -148,14 +157,29 @@ public class PointerView extends View {
         }
     }
 
+    /**
+     * @return 当前图标的数量
+     */
     public int getPointerCount() {
         return mPointerCount;
     }
 
+    /**
+     * 设置当前指示的位置
+     *
+     * @param position 位置
+     * @see #setCurrentPosition(int, float)
+     */
     public void setCurrentPosition(int position) {
         setCurrentPosition(position, 0f);
     }
 
+    /**
+     * 设置当前指示的位置和偏移量
+     *
+     * @param position       位置
+     * @param positionOffset 偏移量
+     */
     public void setCurrentPosition(int position, float positionOffset) {
         positionOffset = Math.max(0, Math.min(positionOffset, 1f));
         if (position != mCurrentPosition || positionOffset != mPositionOffset) {
@@ -165,14 +189,26 @@ public class PointerView extends View {
         }
     }
 
+    /**
+     * @return 当前指示的位置
+     */
     public int getCurrentPosition() {
         return mCurrentPosition;
     }
 
+    /**
+     * @return 图标Drawable
+     */
     public Drawable getPointerDrawable() {
         return mPointer;
     }
 
+    /**
+     * 设置指示图标的资源ID
+     *
+     * @param resId 资源ID
+     * @see #setPointerDrawable(Drawable)
+     */
     public void setPointerResource(int resId) {
         final int oldWidth = mDrawableWidth;
         final int oldHeight = mDrawableHeight;
@@ -196,7 +232,11 @@ public class PointerView extends View {
         invalidate();
     }
 
-
+    /**
+     * 设置指示图标Drawable
+     *
+     * @param point 图标Drawable
+     */
     public void setPointerDrawable(Drawable point) {
         if (mPointer != point) {
             final int oldWidth = mDrawableWidth;
@@ -308,6 +348,13 @@ public class PointerView extends View {
         canvas.restoreToCount(saveCount);
     }
 
+    /**
+     * 绘画偏移图标
+     * @param canvas 画布
+     * @param pointer 图标Drawable
+     * @param spacing 间距
+     * @param positionOffset 偏移量(0~1)
+     */
     protected void onDrawOffset(Canvas canvas, Drawable pointer, float spacing,
                                 float positionOffset) {
         canvas.translate((mDrawableWidth + spacing) * positionOffset, 0);

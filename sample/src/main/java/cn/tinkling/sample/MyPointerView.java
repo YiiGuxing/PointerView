@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 
-import cn.tinkling.widget.PointerView;
+import cn.tinkling.pointerview.PointerView;
 
 public class MyPointerView extends PointerView {
 

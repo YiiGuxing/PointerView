@@ -6,6 +6,19 @@ ViewPagerIndicator
 用法：
 =====
 
+Gradle
+
+        compile 'cn.tinkling.pointerview:pointerview:1.0.0@aar'
+
+Maven
+
+        <dependency>
+            <groupId>cn.tinkling.pointerview</groupId>
+            <artifactId>pointerview</artifactId>
+            <version>1.0.0</version>
+            <type>aar</type>
+        </dependency>
+
 1.drawable(pointer_selector.xml):
 
         <selector xmlns:android="http://schemas.android.com/apk/res/android">
@@ -15,7 +28,7 @@ ViewPagerIndicator
         
 2.layout xml:
 
-        <cn.tinkling.widget.PointerView xmlns:app="http://schemas.android.com/apk/res-auto"
+        <cn.tinkling.pointerview.PointerView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/pointerView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

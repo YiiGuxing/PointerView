@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import cn.tinkling.widget.PointerView;
+import cn.tinkling.pointerview.PointerView;
 
 
 public class MainActivity extends ActionBarActivity {
